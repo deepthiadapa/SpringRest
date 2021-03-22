@@ -25,7 +25,7 @@ public class EmployeeController {
 	public ArrayList<Employee> getAllEmployees() {
 		return employeeService.getAllEmployees();
 	}
-	@PutMapping("/employees/{id}")
+	@PutMapping("/employees")
 	public Employee updateEmployee(@RequestBody @Valid Employee employee) throws EmployeeNotFoundException {
 		return employeeService.updateEmployee(employee);
 	}
