@@ -49,8 +49,7 @@ public class CountryController {
 	}
 	@PostMapping("/countries")
 	public void addCountry(@RequestBody @Valid Country country) {
-		
-		logger.debug("Start");
+		logger.info("Start");
 		/*ValidatorFactory factory=Validation.buildDefaultValidatorFactory();
 		Validator validator=factory.getValidator();
 		Set<ConstraintViolation<Country>> violations=validator.validate(country);
@@ -61,9 +60,12 @@ public class CountryController {
 		if(violations.size()>0) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,errors.toString());
 		}*/
-		logger.debug("Added {}", country);
-		logger.info("END");
-
+		listCountries.add(country);
+		logger.debug("Country : {}",country.toString());
+		logger.info("End");
+		
+		
+		
 	}
 	
 }
